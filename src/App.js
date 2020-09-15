@@ -1,24 +1,28 @@
-import React,{useState} from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
+import { useRecoilValue} from 'recoil'
+import {darkModeState} from './shared/globalState'
+
+import Button from './components/Button'
+import ImgLogin from './components/ImgLogin'
+
+
 function App() {
-  const [isDark,setIsDark] = useState(false)
+
+
+  const isDark = useRecoilValue(darkModeState);
 
   const handleClick= () =>{
-    setIsDark(!isDark);
+    console.log(!isDark);
   }
 
   return (
     <div className={`App ${isDark? 'dark-mode': ''}`}>
       <h2>Toggle Dark/Light Mode with RECOIL</h2>
       <p>Click the button to toggle between dark and light mode for this page.</p>
-      <button
-        className={isDark? 'button-dark-mode' : ''}
-        onClick={handleClick}
-      >
-        change theme
-      </button>
+      <ImgLogin/>
+      <Button/>
     </div>
   );
 }
