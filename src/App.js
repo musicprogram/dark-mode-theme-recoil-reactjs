@@ -1,24 +1,24 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [isDark,setIsDark] = useState(false)
+
+  const handleClick= () =>{
+    setIsDark(!isDark);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isDark? 'dark-mode': ''}`}>
+      <h2>Toggle Dark/Light Mode with RECOIL</h2>
+      <p>Click the button to toggle between dark and light mode for this page.</p>
+      <button
+        className={isDark? 'button-dark-mode' : ''}
+        onClick={handleClick}
+      >
+        change theme
+      </button>
     </div>
   );
 }

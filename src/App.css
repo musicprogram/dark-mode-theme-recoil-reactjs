@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
 }
 
 .App-logo {
@@ -37,3 +41,25 @@
   }
 }
 
+button {
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button-dark-mode{
+  background-color: #e7e7e7;
+  color: black;
+}
+
+.dark-mode{
+  background-color: black;
+  color: white;
+}
